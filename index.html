@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Temperature Converter</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://unpkg.com/headliner">
+</head>
+<body>
+	<div id="app" class="mw-48 center ph3">
+		<h1 class="tracked upper">Converter</h1>
+		<input @keyup="fahrenheit_to_celcius" v-model="value" type="number" class="input p2 w-100" placeholder="77">
+		<section>
+			<div class="pv3">
+				<p class="bold">Fahrenheit to Celcius</p>
+				<h1>{{ result }}º</h1>
+			</div>
+		</section>
+	</div>
+<script src="https://vuejs.org/js/vue.js"></script>
+<!-- <script src="https://vuejs.org/js/vue.min.js"></script> -->
+<script>
+var app = new Vue({
+	el: "#app",
+	data: {
+		value: 77,
+		result: 0	
+	},
+	methods: {
+		fahrenheit_to_celcius: function () {
+			this.result = (this.value - 32) * 5/9;
+		}
+	}
+})
+</script>
+</body>
+</html>
