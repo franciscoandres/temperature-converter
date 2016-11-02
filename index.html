@@ -15,33 +15,39 @@
 		<section class="flex flex-wrap justify-between">
 			<div class="w-100 w-30-s">
 				<p class="bold">Fahrenheit to Celcius</p>
-				<h1>{{ ftc }} ºC</h1>
+				<h1>{{ ftc | round }} ºC</h1>
 			</div>
 			<div class="w-100 w-30-s">
 				<p class="bold">Fahrenheit to Kelvin</p>
-				<h1>{{ ftk }} ºF</h1>
+				<h1>{{ ftk | round }} ºF</h1>
 			</div>
 			<div class="w-100 w-30-s">
 				<p class="bold">Celcius to Fahrenheit</p>
-				<h1>{{ ctf }} ºF</h1>
+				<h1>{{ ctf | round }} ºF</h1>
 			</div>
 			<div class="w-100 w-30-s">
 				<p class="bold">Celcius to Kelvin</p>
-				<h1>{{ ctk }} ºF</h1>
+				<h1>{{ ctk | round }} ºF</h1>
 			</div>
 			<div class="w-100 w-30-s">
 				<p class="bold">Kelvin to Fahrenheit</p>
-				<h1>{{ ktf }} ºF</h1>
+				<h1>{{ ktf | round }} ºF</h1>
 			</div>
 			<div class="w-100 w-30-s">
 				<p class="bold">Kelvin to Fahrenheit</p>
-				<h1>{{ ktc }} ºF</h1>
+				<h1>{{ ktc | round }} ºF</h1>
 			</div>
 		</section>
 	</div>
 <script src="https://vuejs.org/js/vue.js"></script>
 <!-- <script src="https://vuejs.org/js/vue.min.js"></script> -->
 <script>
+
+Vue.filter("round", function(value){
+	// http://www.jacklmoore.com/notes/rounding-in-javascript/
+ 	return Number(Math.round(value+"e2")+"e-2");
+})
+
 var app = new Vue({
 	el: "#app",
 	data: {
@@ -85,6 +91,7 @@ var app = new Vue({
 		this.get_result()
 	}
 })
+
 </script>
 </body>
 </html>
