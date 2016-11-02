@@ -7,35 +7,35 @@
 	<link rel="stylesheet" href="https://unpkg.com/headliner@3.6.0">
 </head>
 <body>
-	<div id="app" class="mw-48 center ph3 ph5-m">
+	<div id="app" class="center ph3 ph5-m ph6-l">
 		<section class="pv3">
 			<h1 class="tracked upper">Converter</h1>
-			<input @keyup="get_result()" v-model="value" type="number" class="input p2 w-100" placeholder="77">
+			<input @keyup="get_result()" v-model="value" type="number" class="f3-s input p2 w-100 mw-32" placeholder="77">
 		</section>
-		<section class="flex flex-wrap justify-between">
-			<div class="w-100 w-30-s">
+		<section class="flex flex-wrap justify-between pv3">
+			<div class="w-50 w-30-l">
 				<p class="bold">Fahrenheit to Celcius</p>
 				<h1>{{ ftc | round }} ºC</h1>
 			</div>
-			<div class="w-100 w-30-s">
+			<div class="w-50 w-30-l">
 				<p class="bold">Fahrenheit to Kelvin</p>
-				<h1>{{ ftk | round }} ºF</h1>
+				<h1>{{ ftk | round }} K</h1>
 			</div>
-			<div class="w-100 w-30-s">
+			<div class="w-50 w-30-l">
 				<p class="bold">Celcius to Fahrenheit</p>
 				<h1>{{ ctf | round }} ºF</h1>
 			</div>
-			<div class="w-100 w-30-s">
+			<div class="w-50 w-30-l">
 				<p class="bold">Celcius to Kelvin</p>
-				<h1>{{ ctk | round }} ºF</h1>
+				<h1>{{ ctk | round }} K</h1>
 			</div>
-			<div class="w-100 w-30-s">
+			<div class="w-50 w-30-l">
 				<p class="bold">Kelvin to Fahrenheit</p>
 				<h1>{{ ktf | round }} ºF</h1>
 			</div>
-			<div class="w-100 w-30-s">
+			<div class="w-50 w-30-l">
 				<p class="bold">Kelvin to Celcius</p>
-				<h1>{{ ktc | round }} ºF</h1>
+				<h1>{{ ktc | round }} ºC</h1>
 			</div>
 		</section>
 	</div>
