@@ -4,38 +4,38 @@
 	<meta charset="UTF-8">
 	<title>Temperature Converter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://unpkg.com/headliner@3.6.0">
+	<link rel="stylesheet" href="https://unpkg.com/xvx">
 </head>
 <body>
-	<div id="app" class="center ph3 ph5-m ph6-l">
+	<div id="app" class="center ph3 sm_ph4 lg_ph5">
 		<section class="pv3">
-			<h1 class="tracked upper">Converter</h1>
-			<input @keyup="get_result()" v-model="value" type="number" class="f3-s input p2 w-100 mw-32" placeholder="77">
+			<h1 class="tracked upper">Temperature Converter</h1>
+			<input @keyup="get_result()" v-model="value" type="number" class="sm_f3 input_reset border p1 col_100 mw_32" placeholder="77">
 		</section>
-		<section class="flex flex-wrap justify-between pv3">
-			<div class="w-50 w-30-l">
-				<p class="bold">Fahrenheit to Celcius</p>
-				<h1>{{ ftc | round }} ºC</h1>
+		<section class="flex flex_wrap justify_between pv2">
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Fahrenheit to Celcius</p>
+				<h1 class="f5 sm_f3">{{ ftc | round }} ºC</h1>
 			</div>
-			<div class="w-50 w-30-l">
-				<p class="bold">Fahrenheit to Kelvin</p>
-				<h1>{{ ftk | round }} K</h1>
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Fahrenheit to Kelvin</p>
+				<h1 class="f5 sm_f3">{{ ftk | round }} K</h1>
 			</div>
-			<div class="w-50 w-30-l">
-				<p class="bold">Celcius to Fahrenheit</p>
-				<h1>{{ ctf | round }} ºF</h1>
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Celcius to Fahrenheit</p>
+				<h1 class="f5 sm_f3">{{ ctf | round }} ºF</h1>
 			</div>
-			<div class="w-50 w-30-l">
-				<p class="bold">Celcius to Kelvin</p>
-				<h1>{{ ctk | round }} K</h1>
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Celcius to Kelvin</p>
+				<h1 class="f5 sm_f3">{{ ctk | round }} K</h1>
 			</div>
-			<div class="w-50 w-30-l">
-				<p class="bold">Kelvin to Fahrenheit</p>
-				<h1>{{ ktf | round }} ºF</h1>
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Kelvin to Fahrenheit</p>
+				<h1 class="f5 sm_f3">{{ ktf | round }} ºF</h1>
 			</div>
-			<div class="w-50 w-30-l">
-				<p class="bold">Kelvin to Celcius</p>
-				<h1>{{ ktc | round }} ºC</h1>
+			<div class="col_50 lg_col_30">
+				<p class="fw3">Kelvin to Celcius</p>
+				<h1 class="f5 sm_f3">{{ ktc | round }} ºC</h1>
 			</div>
 		</section>
 	</div>
