@@ -7,39 +7,67 @@
 	<link rel="stylesheet" href="https://unpkg.com/xvx">
 </head>
 <body>
-	<div id="app" class="center ph3 sm_ph4 lg_ph5">
+	<a id="setDarkTrigger" class="link bg_black white bold rad2 border p1 ml1 mt1 inline_block absolute right_2" href="#">Dark</a>
+	<div id="app" class="md_mw_32 lg_mw_48 col_100 center ph2">
 		<section class="pv3">
 			<h1 class="tracked upper">Temperature Converter</h1>
-			<input @keyup="get_result()" v-model="value" type="number" class="sm_f3 input_reset border p1 col_100 mw_32" placeholder="77">
+			<input @keyup="get_result()" v-model="value" type="number" class="sm_f3 input_reset border p2" placeholder="77">
 		</section>
 		<section class="flex flex_wrap justify_between pv2">
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Fahrenheit to Celcius</p>
 				<h1 class="f5 sm_f3">{{ ftc | round }} ºC</h1>
 			</div>
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Fahrenheit to Kelvin</p>
 				<h1 class="f5 sm_f3">{{ ftk | round }} K</h1>
 			</div>
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Celcius to Fahrenheit</p>
 				<h1 class="f5 sm_f3">{{ ctf | round }} ºF</h1>
 			</div>
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Celcius to Kelvin</p>
 				<h1 class="f5 sm_f3">{{ ctk | round }} K</h1>
 			</div>
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Kelvin to Fahrenheit</p>
 				<h1 class="f5 sm_f3">{{ ktf | round }} ºF</h1>
 			</div>
-			<div class="col_50 lg_col_30">
+			<div class="col_100 sm_col_50 lg_col_30">
 				<p class="fw3">Kelvin to Celcius</p>
 				<h1 class="f5 sm_f3">{{ ktc | round }} ºC</h1>
 			</div>
 		</section>
 	</div>
 <script src="https://vuejs.org/js/vue.js"></script>
+<script>
+	
+	/*
+		Bro, I dont wanna read any documentation bout anything at the moment
+		for every little shit that want to add a 'dark mode' I just create in 
+		plain js cuz is easy and is that something that already know, fck libs... sometimes.
+	*/
+
+	const setDarkTrigger = document.getElementById("setDarkTrigger");
+	const body           = document.body;
+
+	function darkMode() {
+		body.classList.toggle("bg_black");
+		body.classList.toggle("white");
+		bodyIsDark = body.classList.contains('bg_black')
+		
+		if (bodyIsDark) {
+			setDarkTrigger.innerHTML = 'White';
+		}else {
+			setDarkTrigger.innerHTML = 'Dark';
+		}
+		
+	}
+
+	setDarkTrigger.addEventListener("click", darkMode);
+
+</script>
 <!-- <script src="https://vuejs.org/js/vue.min.js"></script> -->
 <script>
 
@@ -51,6 +79,7 @@ Vue.filter("round", function(value){
 var app = new Vue({
 	el: "#app",
 	data: {
+		isDark: true,
 		value: 77,
 		ftc: 0,
 		ftk: 0,
